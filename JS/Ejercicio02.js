@@ -38,6 +38,7 @@ console.log("El cliente resive los servicios gratuitos.");
 }
 
 
+
 //3.-Number
 var cantidad;
 const costo_produccion = 10.50;
