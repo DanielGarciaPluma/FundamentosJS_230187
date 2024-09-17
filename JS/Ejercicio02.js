@@ -54,5 +54,55 @@ console.log(`El importe total de la compra es: ${cantidad}*${costo_produccion} `
 
 console.log(`Tu nuevo total de la compra es de: ${saldo_cuenta}-${cantidad}*${costo_produccion}`)
 
+const alumno = "Juan";
+let producto = "Monitor 20 pulgadas";
+let produccto;
 
+console.warn("------------------ Tipo de dato - String (cadena de caracteres");
+console.log(`El nombre del alumno es: ${alumno}, que es un tipo de dato ${typeof(producto)}`);
+producto="Monitor 20\"";
+console.log(`El nombre del producto es: ${producto}, que es un tipo de dato ${typeof(alumno)}`);
+//Manipulacion de String
+console.log(`Mas adelante podremos transformar el contenido de los string usando funciones especificos como convertir a mayusculas ${alumno} => ${alumno.toUpperCase} `)
+
+//BIGINT (Enteros de dimenciones amplias ) - Generalmente utilizando en sistema
+
+const numeroGrande = 1234567890;
+const numeroGrande2 = 12345678901234567890;
+const numeroGrande3= 123456789012345678901234567890;
+const numeroGrande4 = 1234567890123456789012345678901234567890;
+
+// // String o cadenas de texto
+// const alumno = "Juan";
+// let producto = "Monitor 20 pulgadas";
+
+// const numero = "30";
+// nost numero2 =30;
+// console.log (type numero);
+// console.log(typeof numero2);
+
+//Bignit
+// const numeroGrande = BigInt (769696969646875987);
+// console.log(typeof numeroGrande);
+
+// const numero = 10;
+// const numero2 =20;
+// console.log( numero= Number(numeroGrande));
+
+
+// const numero = "30";
+// const numer2 = 30;
+// console.log(typeof String (numero));
+// console.log(typeof Number(numer2));
+
+// //Symbol
+// const primerSymbol = Symbol(30);
+// const segundoSymbol = Symbol(30);
+// console.log(primerSymbol === segundoSymbol);
+// console.log(primerSymbol.valueOf());
+// console.log(segundoSymbol.valueOf());
+
+// //null
+// const descuento =null;
+// console.log(typeof descuento);
 
