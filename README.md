@@ -9,8 +9,8 @@ Previo a iniciar el desarollo de software para web usando el framework de nodeJS
 |--|--|--|--|
 |1.|Metodo de Evaluación|1|Finalizada|
 |2.|Inicialización del Proyecto de Fundamentos de JS|5|Finalizada|
-|3.|Declaracion de variables|(Undewfined,Boolean,Number)10|Finalizada|
-|4.|Declaracion de variables|(String,Bigint,Symbol,Null,Function)Por definir|Activa|
+|3.|Declaracion de variables (Undefined,Boolean,Number)|10|Finalizada|
+|4.|Declaracion de variables (String,Bigint,Symbol,Null,Function)|6|Finalizada|
 |5.|introduccion a Objetos||Activa|
 ### Autor
 Carlos Daniel Garcia Pluma 
