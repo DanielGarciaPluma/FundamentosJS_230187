@@ -244,4 +244,28 @@ estatusRelacionSentimental=null;
 
 console.log(`El usuario ${nombrUsuario}, se ha logeado corectamente , al tenre acceso asu informacion de si perfil podemos deducir que su genero es ${generoUsuario} y que su estado de relacionn en ${estatusRelacionSentimental} y su ultimma publicaion la realizo el ${fecha_ultimahost} `);
 
+//Comparacion de NULL vs undefined
+//si bien undefined y null tiene el mismo valor, no tienen el mismo tipo de dato
 
+console.log("comparacion de la equidad entre undefined y null");
+(fecha_ultimahost==estatusRelacionSentimental)?
+console.log("Ambas variables si tienen el mismo valor "):
+console.log("Las variables no tienen el mismo valor");
+
+console.log("comparacion de la identidad entre undefined y null");
+console.log(
+   (fecha_ultimahost===estatusRelacionSentimental)?
+   "Ambas variables si tienen el mismo valor ":
+   "Las variables no tienen el mismo valor");
+
+// 8.- FUCTION (funciones)
+console.warn("---Tipo de dato: FUCTION (funciones)");
+
+//Declaramos una funcion que nos permita recibir un parametro en este casa el nombre de la pernosa a saludar
+//y le encviamos un saluda, esta funcion la asignacion a una cosntante
+
+const saludar = function(nombre){return `Hola, ${nombre}!`}
+//incvocamos ala fuccion declarada
+console.log(saludar("Daniel"));
+//y el tipo de dato tiene esta constante
+console.log(`El tipo de la constante saludar es: ${typeof(saludar)}`);
