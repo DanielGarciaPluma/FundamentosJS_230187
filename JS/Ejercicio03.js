@@ -118,17 +118,94 @@ console.log("El objeto actualmente tiene los siguientes valores");
 console.log(JSON.stringify(Producto2, null, 2));
 // Convierte el objeto a una cadena para evitar problemas con la referencia
 console.log("Por cuestiones de inflación el costo del producto ha cambiado y debe ser actualizado... de $6,829.00 a $6,915.50");
+
 // Para podificiar el valor de un objeto basta con igualar el nuevo valor de la proppiedad deseada 
 Producto2.Precio=6915.50;
 console.log('Los nuevos valores del Prodcuto son');
 console.log(Producto2);
-console.log(JSON.stringify(Producto2, null, 2));
+
+// ¿ Puedom cambiar nno soloel valor si no el tipo de dato de un objeto en JS?
+console.log("-----------------------------------------------------------------------");
+console.log("El objeto actualmente tiene los siguientes valores");
+var tipoDisponibilidad = typeof(Producto2.Disponibilidad);
+console.log(`El tipo de dato de la disponibilidad es: ${tipoDisponibilidad}`);
+console.log(JSON.stringify(Producto2, null, 2));  // Disponibilidad Booleano
+Producto2.Disponibilidad="Si";
+let nuevoTipoDisponibilidad= typeof(Producto2.Disponibilidad);
+console.log(Producto2);
+console.log(`El nuevo tipo de la disponibilidad es ${nuevoTipoDisponibilidad}`);
+
+//"Si"
+//
+
+//Agregar nuevas propiedades a un objeto existente
+console.log("%c5.- Agregacion de propiedades de un objeto (Mutacion)", style_console);
+console.log("Objeto antes de ser modificado: ");
+console.table(Comprador);
+
+//Agreando Propiedades
+Comprador [`Direccion`] = "Av. 05 de Mayo #25, Interior 4A, Xicotepec de Juarez, Puebla, Mexico";
+Comprador [`Tipo`] = "Premiun";
+Comprador [`Estatus`] = "Inactivo";
+Comprador [`TotalCompras`] = 5000000.00;
+console.log("Objeto despues de ser modificado");
+console.table(Comprador);
+ 
+// Eliminar propiedades de un objeto existente
+console.log("%c6.- Eliminación de Propiedades de un Objeto (MUTACIÓN)", style_console);
+console.log("Objeto antes de ser modificado: ")
+console.table(Pedido)
+//Elminamos la propiedad de TipoPago de Pedido
+delete Pedido.TipoPago;
+console.log("Objeto después de ser modificado: ")
+console.table(Pedido)
 
 
+console.log("%c7.- Métodos para contronlar la mutabilidad de los Objetos, Congelación (FREEZE))", style_console);
+//Si deseamos no permitir que los objetos sean modificados ni en estructura, ni en valor, utilizaremos el método FREEZE (congelar)
+console.log("La estructura actual del Objeto COMPRADOR es: ")
+console.table(Comprador); 
+Object.freeze (Comprador);
+//Inteneramos agregar, eliminar o modificar los valores de sus propiedades 172 
+Comprador.FechaUltimaCompra = "05/09/2024";
+Comprador.Direccion= "Calle 16 de Septiembre #102, Col. Manantiales, Huauchinango, Puebla, México"
+console.log("Verificamos si se realizaron los cambios en el objeto COMPRADOR");
+console.table(Comprador);
 
 
+console.log("%c8.- Métodos para contronlar la mutabilidad de los Objetos, Sellado (SEAL)", style_console);
+// Sin embargo, en el caso que desemos poder podificar los valores del las propiedades del Objeto, pero no su estructura, usaremos SEAL
+console.log("Objeto antės de ser modificado: ");
+console.table (Pedido);
+Object.seal (Pedido);
+//Intentamos modificar su estructura.
+Pedido [`FechaPedido`] = "25/09/2024 11:05:03";
+delete Pedido[`Cantidad`];
+console.log("Verificamos si se realizaron los cambios en el Objeto PEDIDO:") 
+console.table (Pedido);
+// Ahora intentamos modificar el valor de las propiedades
+Pedido.Cantidad= 5
+console.log("Verificamos si se realizaron los cambios en el Objeto PEDIDO:") 
+console.table (Pedido);
 
-
+// Desestructuración de 2 o más objeto
+console.log("%c9.- Desestructuración de 2 o más Objetos", style_console);
+const {recio: productoPrecio, SKU: productoSKU, Marca: productoMarca} = Producto 
+const {Correo: clienteCorreo, Pais: clientePais, SaldoActual: clientesaldo, 
+Tipo: clienteTipo} = Comprador
+// Transformar valores cuantitativos en cualitativos
+if(productoPrecio>2000){
+    productoPrecio = "Caro"
+}else{
+    productoPrecio = "Barato"
+}
+if(clienteSaldo > 0){
+    clienteSaldo "A favor"
+}else if(clienteSaldo <0){
+clienteSaldo="En contra"
+}else{
+clienteSaldo
+}
 
 
 
