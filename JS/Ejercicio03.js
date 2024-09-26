@@ -192,42 +192,70 @@ console.log("Verificamos si se realizaron los cambios en el Objeto PEDIDO:")
 console.table (Pedido);
 
 // Desestructuración de 2 o más objeto
-console.log("%c9.- Desestructuración de 2 o más Objetos", style_console);
-const {precio: productoPrecio, SKU: productoSKU, Marca: productoMarca} = Producto 
-const {Correo: clienteCorreo, Pais: clientePais, SaldoActual: clienteSaldo, 
-Tipo: clienteTipo} = Comprador
-// Transformar valores cuantitativos en cualitativos
+console.log("%c9.- Desestructuracion de 2 o mas objetos", style_console);
 
 
-// if(productoPrecio>2000)
-//     productoPrecio = "Caro";
-//  else
-//    productoPrecio= "Barato";
-//  if(clienteSaldo > 0)
-//     clienteSaldo="A favor"
-//  else if(clienteSaldo <0)
-//      clienteSaldo="En contra"
-//  else
-//      clienteSaldo="Sin deuda"
- 
-//  //Transformar valores cualitativos en cuantitativos
- 
-//  let clienteNivel;
-//  if(clienteTipo=="Premium")
-//      clienteNivel = 1
-//  if(clienteTipo=="Freemium")
-//      clienteNivel = 2
-//  if(clienteTipo=="No identificado")
-//      clienteNivel = 3
-//  // Clasificamos al cliente por su País de Origen
-//  if(clientePais == "México")
-//      clientePais="Nacional"
-//  else
-//      clientePais="Extranjero"
+
+// siempre va declarado con el nombre que tiene en el objeto y luego el nuevo nombre
+let{Precio: productoPrecio, SKU: productoSKU, Marca: productoMarca}=Producto
+let{Correo: clienteCorreo, PaisOrigen: clientePais, SaldoActual: clienteSaldo, Tipo: clienteTipo}=Comprador
 
 
-//modificado o eliminado
+// transformar valores cuantitativos en cualitativos
 
+if(productoPrecio>2000)
+
+    productoPrecio="CARO"
+
+else productoPrecio="Barato"
+
+if (clienteSaldo>0)
+    clienteSaldo="A favor"
+else if(clienteSaldo<0)
+clienteSaldo="En contra"
+else
+clienteSaldo="Sin deuda"
+
+
+
+// transformar valores cualitativos a cuantitativos
+let clienteNivel;
+
+if(clienteTipo="Premium")
+
+    clienteNivel=1
+
+if(clienteTipo=="Freemium")
+
+    clienteNivel=2
+
+if(clienteTipo=="No identificado")
+
+clienteNivel=3
+
+// transformar o clasificar al cliente por su pais de origen
+if(clientePais== "Mexico")
+ clientePais="Nacional"
+else
+clientePais="Extrangero"
+
+// ole -
+let datosClientePromociones={clienteCorreo, clientePais, clienteNivel, clienteSaldo, productoMarca, productoPrecio}
+// el nuevo objeto que creamos seria un objeto de la informacion que enviariamos al area de marketing para la difucion de productos
+
+console.log("datos del cliente y sus datos a comprar")
+console.table(datosClientePromociones)
+
+// let spotyUser=
+// {
+//     Name:"", //conjelado
+//     nickiname:"", // sellado
+//     email:"", // sellodo
+//     password:"",// sellado
+//     rol:"",
+//     since:"",
+//     playList:["Las doñeras","Carnita asada","Prreo brasileiro"]
+// }
 
 // Operaciones sobre Objetos
 // Unión de Objetos
