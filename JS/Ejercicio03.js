@@ -274,6 +274,7 @@ console.log(`Esta el objeto de Pedido Sellado?: ${Object.isSealed(Comprador)}`);
 
 //Modificamos la estructura de producto, agregando una nueva propiedad
 Producto[`isLegacy`]=false;
+console.log(Producto);
 console.table(Venta2);
 
 
