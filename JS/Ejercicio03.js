@@ -39,6 +39,7 @@ console.log(`Los datos del PRODUCTO son: \n
 console.log("%c2.- Objeto", style_console);
 let Producto = 
 {
+    ID: 100,
     Nombre : "Zapatos Casuales", 
     Marca: "Escobedo",
     Modelo: "Redondo '24", 
@@ -83,6 +84,7 @@ let Producto2 =
 
 let Comprador =
 {
+    ID:3216,
     Clave: 230187,
     Nombre: "Carlos",
     Apellidos: "Garcia Pluma",
@@ -93,6 +95,7 @@ let Comprador =
 }
 
 let Pedido= {
+    ID:5816,
     Producto_Clave: 316, 
     Comprador_Clave: 230187,
     Cantidad: 2, 
@@ -190,27 +193,88 @@ console.table (Pedido);
 
 // Desestructuración de 2 o más objeto
 console.log("%c9.- Desestructuración de 2 o más Objetos", style_console);
-const {recio: productoPrecio, SKU: productoSKU, Marca: productoMarca} = Producto 
-const {Correo: clienteCorreo, Pais: clientePais, SaldoActual: clientesaldo, 
+const {precio: productoPrecio, SKU: productoSKU, Marca: productoMarca} = Producto 
+const {Correo: clienteCorreo, Pais: clientePais, SaldoActual: clienteSaldo, 
 Tipo: clienteTipo} = Comprador
 // Transformar valores cuantitativos en cualitativos
-if(productoPrecio>2000){
-    productoPrecio = "Caro"
-}else{
-    productoPrecio = "Barato"
-}
-if(clienteSaldo > 0){
-    clienteSaldo "A favor"
-}else if(clienteSaldo <0){
-clienteSaldo="En contra"
-}else{
-clienteSaldo
-}
 
 
+// if(productoPrecio>2000)
+//     productoPrecio = "Caro";
+//  else
+//    productoPrecio= "Barato";
+//  if(clienteSaldo > 0)
+//     clienteSaldo="A favor"
+//  else if(clienteSaldo <0)
+//      clienteSaldo="En contra"
+//  else
+//      clienteSaldo="Sin deuda"
+ 
+//  //Transformar valores cualitativos en cuantitativos
+ 
+//  let clienteNivel;
+//  if(clienteTipo=="Premium")
+//      clienteNivel = 1
+//  if(clienteTipo=="Freemium")
+//      clienteNivel = 2
+//  if(clienteTipo=="No identificado")
+//      clienteNivel = 3
+//  // Clasificamos al cliente por su País de Origen
+//  if(clientePais == "México")
+//      clientePais="Nacional"
+//  else
+//      clientePais="Extranjero"
 
 
+//modificado o eliminado
 
+
+// Operaciones sobre Objetos
+// Unión de Objetos
+console.log("%c10. Unión de Objetos usando el método de asignación (ASSING)", style_console);
+console.log("Imprimimos la estructura y valores del Objeto PRODUCTO") 
+console.table (Producto);
+console.log("Imprimimos la estructura y valores del Objeto PEDIDO")
+console. table (Pedido);
+// Suponiendo que el usuarios ya realizó el pago el pedido se convertira en una VENTA que requiere información de ambos objetos
+// IMPORTANTE ASSIG : no solo permite la fusion de el pedido de 2 o mas objetos , tambien muta los objetos originales periendo el valor original del ID en este caso
+let producto3 ={...Producto}
+const Venta = Object.assign(Producto, Pedido);
+console.log("Consultamos este nuevo objeto VENTA ")
+console.table (Venta);
+
+
+// Unión de Objetos usando SPREAD OPERATOR para evitar la perdida de información con objetos que comparten el mismo nombre en sus propiedades
+console.log("%c11. Unión de Objetos usando el SPREAD OPERATOR (...)", style_console);
+console.table(Producto);
+console.table(Pedido);
+console.table(Comprador);
+
+const Venta2 =
+{
+producto: {...Producto},
+comprador:{...Comprador},
+pedido:{...Pedido}
+} 
+
+console.log("Fusionamos los 3 objetos en uno nuevo, sin perdida de información") 
+console.log(Venta2);
+console.table (Venta2)
+
+//Vamos a verificar el estatus de mutabilidad de los objetos
+console.log(`Vamos a verificar el estatus de mutabilidad del objeto PEDIDO`) 
+console.log(`Esta el objeto de Pedido Congelado ${Object.isFrozen (Pedido)}`); 
+console.log(`Esta el objeto de Pedido Sellado? ${Object.isSealed(Pedido)}`);
+console.log(`Vamos a verificar el estatus de mutabilidad del objeto COMPRADOR`) 
+console.log(`Esta el objeto de Pedido Congelado ${Object.isFrozen (Comprador)}`); 
+console.log(`Esta el objeto de Pedido Sellado?: ${Object.isSealed(Comprador)}`);
+console.log("Vamos a verificar el estatus de mutabilidad del objeto COMPRADOR"); 
+console.log(`Esta el objeto de Pedido Congelado?: ${Object.isFrozen (Comprador)}`); 
+console.log(`Esta el objeto de Pedido Sellado?: ${Object.isSealed(Comprador)}`);
+
+//Modificamos la estructura de producto, agregando una nueva propiedad
+Producto[`isLegacy`]=false;
+console.table(Venta2);
 
 
 // const producto = {
