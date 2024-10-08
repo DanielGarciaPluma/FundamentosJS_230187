@@ -12,6 +12,7 @@ Previo a iniciar el desarollo de software para web usando el framework de nodeJS
 |3.|Declaracion de variables (Undefined,Boolean,Number)|10|Finalizada|
 |4.|Declaracion de variables (String,Bigint,Symbol,Null,Function)|6|Finalizada|
 |5.|introduccion a Objetos|19|Finalizada|
+|6.|Repaso de arreglos (Arrays)|Pendiente|Activa|
 ### Autor
 Carlos Daniel Garcia Pluma 
 Unidad 1
