@@ -13,6 +13,8 @@ Previo a iniciar el desarollo de software para web usando el framework de nodeJS
 |4.|Declaracion de variables (String,Bigint,Symbol,Null,Function)|6|Finalizada|
 |5.|introduccion a Objetos|19|Finalizada|
 |6.|Repaso de arreglos (Arrays)|16|Finalizada|
+|7.|Sentencias de control y ciclos en Js|16|Activa|
+
 ### Autor
 Carlos Daniel Garcia Pluma 
 Unidad 1
